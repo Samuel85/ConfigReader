@@ -6,7 +6,7 @@ All tokens and values in the file "config.txt", are parsed and stored in memory 
 
 # Example
 ```
-// Uncomment this flag to get more info.
+// Uncomment this flag to get more info
 //#define _DEBUGMODE_
 
 #include "configreader.h"
@@ -19,11 +19,15 @@ int main()
     int language = stoi(configreader->getValue("LANGUAGE"));    
     string save0 = configreader->getValue("SAVE0");
     
-    delete configreader;
-        
+    
     std::cout << "language=" << language << endl;
     std::cout << "SAVE0=" << save0 << endl;
+    std::cout << "SAVE1=" << configreader->getValue("SAVE1") << endl;
+
+    configreader->setValue("SAVE1","newVal");
+    std::cout << "SAVE1=" << configreader->getValue("SAVE1") << endl;
     
     return 0;
 }
+
 ```
