@@ -6,7 +6,7 @@ All tokens and values in the file "config.txt", are parsed and stored in memory 
 
 # Example
 ```
-// Uncomment this flag to get more info
+// Uncomment this flag to get more info.
 //#define _DEBUGMODE_
 
 #include "configreader.h"
