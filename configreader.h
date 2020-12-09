@@ -29,7 +29,8 @@ public:
     ConfigReader(const string fname) : filename(fname){}
     ~ConfigReader(){}
     void parse();
-    string getValue(const string token);
+    string getValue(const string &token);
+    void setValue(const string &token, const string &value);
 };
 
 void ConfigReader::parse()
@@ -75,9 +76,15 @@ void ConfigReader::parse()
     #endif
 }
 
-string ConfigReader::getValue(const string token)
+string ConfigReader::getValue(const string &token)
 {
     return list.getValue(token);
 }
+
+void ConfigReader::setValue(const string &token, const string &value)
+{
+    return list.setValue(token, value);
+}
+
 
 #endif

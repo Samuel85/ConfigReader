@@ -24,10 +24,11 @@ public:
     SingleLinkedList(Node *head);
     ~SingleLinkedList();
     
-    void insert(DataType d);
-    void remove(int index);    
+    void insert(const DataType &d);
+    void remove(const int index);    
     bool isEmpty();
-    string getValue(string token);
+    string getValue(const string &token);
+    void setValue(const string &token, const string &value);
     void displayAll();
 };
 
@@ -61,7 +62,7 @@ SingleLinkedList<DataType>::~SingleLinkedList()
 }
 
 template <typename DataType>
-void SingleLinkedList<DataType>::insert(DataType d)
+void SingleLinkedList<DataType>::insert(const DataType &d)
 {
     Node *n = new Node;
     n->data = d;
@@ -137,7 +138,7 @@ void SingleLinkedList<DataType>::displayAll()
 }
 
 template <typename DataType>
-string SingleLinkedList<DataType>::getValue(string token)
+string SingleLinkedList<DataType>::getValue(const string &token)
 {
     string r;
     Node *n = head;
@@ -152,4 +153,20 @@ string SingleLinkedList<DataType>::getValue(string token)
     }
     return r;
 }
+
+template <typename DataType>
+void SingleLinkedList<DataType>::setValue(const string &token, const string &value)
+{
+    Node *n = head;
+    for (int i=0;i<size;i++)
+    {
+        if (n->data.token == token){
+            n->data.value = value;
+        }
+        else{
+            n = n->next;
+        }
+    }
+}
+
 #endif
