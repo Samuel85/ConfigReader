@@ -1,5 +1,5 @@
-#ifndef _SINGLELINKEDLIST_H__
-#define _SINGLELINKEDLIST_H__
+#ifndef __SINGLELINKEDLIST_H__
+#define __SINGLELINKEDLIST_H__
 
 #include <iostream>
 
